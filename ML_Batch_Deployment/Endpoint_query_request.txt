@@ -1,0 +1,213 @@
+Browser request to an serving model endpoint
+
+{
+  "dataframe_split": {
+    "columns": [
+      "HighBP",
+      "HighChol",
+      "CholCheck",
+      "BMI",
+      "Smoker",
+      "Stroke",
+      "HeartDiseaseorAttack",
+      "PhysActivity",
+      "Fruits",
+      "Veggies",
+      "HvyAlcoholConsump",
+      "AnyHealthcare",
+      "NoDocbcCost",
+      "GenHlth",
+      "MentHlth",
+      "PhysHlth",
+      "DiffWalk",
+      "Sex",
+      "Age",
+      "Education",
+      "Income"
+    ],
+    "data": [
+      [
+        1,
+        0,
+        1,
+        26,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        3,
+        5,
+        30,
+        0,
+        1,
+        4,
+        6,
+        8
+      ],
+      [
+        1,
+        1,
+        1,
+        26,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        3,
+        0,
+        0,
+        0,
+        1,
+        12,
+        6,
+        8
+      ],
+      [
+        0,
+        0,
+        1,
+        26,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        10,
+        0,
+        1,
+        13,
+        6,
+        8
+      ]
+    ]
+  }
+}
+
+Predictions result
+
+{
+  "predictions": [
+    0,
+    0,
+    0
+  ]
+}
+
+
+SQL Query:
+
+SELECT ai_query('la4-1-diabetes-model',
+    request => {
+  "dataframe_split": {
+    "columns": [
+      "HighBP",
+      "HighChol",
+      "CholCheck",
+      "BMI",
+      "Smoker",
+      "Stroke",
+      "HeartDiseaseorAttack",
+      "PhysActivity",
+      "Fruits",
+      "Veggies",
+      "HvyAlcoholConsump",
+      "AnyHealthcare",
+      "NoDocbcCost",
+      "GenHlth",
+      "MentHlth",
+      "PhysHlth",
+      "DiffWalk",
+      "Sex",
+      "Age",
+      "Education",
+      "Income"
+    ],
+    "data": [
+      [
+        1.0,
+        0.0,
+        1.0,
+        26.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        3.0,
+        5.0,
+        30.0,
+        0.0,
+        1.0,
+        4.0,
+        6.0,
+        8.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        26.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        3.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        12.0,
+        6.0,
+        8.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        26.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        10.0,
+        0.0,
+        1.0,
+        13.0,
+        6.0,
+        8.0
+      ]
+    ]
+  }
+})
